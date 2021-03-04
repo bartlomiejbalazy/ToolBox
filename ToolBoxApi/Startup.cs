@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ToolBox.Application;
+using ToolBox.Infrastructure.Persistance;
 
 namespace ToolBoxApi
 {
@@ -31,6 +33,10 @@ namespace ToolBoxApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "ToolBoxApi", Version = "v1"});
             });
+            services.AddHttpContextAccessor();
+
+            services.AddDbContext<DataContext>();
+            services.InstallApplicationServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

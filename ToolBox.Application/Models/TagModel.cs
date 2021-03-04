@@ -1,4 +1,4 @@
-﻿namespace ToolBoxApi
+﻿namespace ToolBox.Application.Models
 {
     public class TagModel
     {

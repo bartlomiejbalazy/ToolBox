@@ -2,13 +2,13 @@
 {
     public record Tag
     {
-        public int Id { get; }
-        public int Name { get; }
+        public int Id { get; init; }
+        public string Name { get; init;  }
 
-        public Tag(int id, int name)
+        public Tag(int id, string name)
         {
             Id = id;
             Name = name;
         }
     }
-}
+}   
